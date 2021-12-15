@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Millon.Inmobiliaria.Application/1.0.0": {
+        "runtime": {
+          "Millon.Inmobiliaria.Application.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Millon.Inmobiliaria.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
