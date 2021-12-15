@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Millon.Inmobiliaria.API", "Millon.Inmobiliaria.API\Millon.Inmobiliaria.API.csproj", "{B8651C87-D482-4A83-BBDC-894B1F144CE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Millon.Inmobiliaria.Infrastructure", "Millon.Inmobiliaria.Infrastructure\Millon.Inmobiliaria.Infrastructure.csproj", "{A9D888F0-ECC9-491D-B521-A0CD07D95D3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Millon.Inmobiliaria.Domain", "Millon.Inmobiliaria.Domain\Millon.Inmobiliaria.Domain.csproj", "{62757D2E-7A4F-4DF9-8CFE-5BED9BAFE2DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Millon.Inmobiliaria.Application", "Millon.Inmobiliaria.Application\Millon.Inmobiliaria.Application.csproj", "{AD402E13-609E-4C71-B509-8C5D3938A923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Millon.Inmobiliaria.Entities", "Millon.Inmobiliaria.Entities\Millon.Inmobiliaria.Entities.csproj", "{02C7CD77-969C-4BE4-9BE2-5DCDFA92392C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8651C87-D482-4A83-BBDC-894B1F144CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8651C87-D482-4A83-BBDC-894B1F144CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8651C87-D482-4A83-BBDC-894B1F144CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8651C87-D482-4A83-BBDC-894B1F144CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9D888F0-ECC9-491D-B521-A0CD07D95D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D888F0-ECC9-491D-B521-A0CD07D95D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D888F0-ECC9-491D-B521-A0CD07D95D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D888F0-ECC9-491D-B521-A0CD07D95D3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62757D2E-7A4F-4DF9-8CFE-5BED9BAFE2DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62757D2E-7A4F-4DF9-8CFE-5BED9BAFE2DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62757D2E-7A4F-4DF9-8CFE-5BED9BAFE2DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62757D2E-7A4F-4DF9-8CFE-5BED9BAFE2DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD402E13-609E-4C71-B509-8C5D3938A923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD402E13-609E-4C71-B509-8C5D3938A923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD402E13-609E-4C71-B509-8C5D3938A923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD402E13-609E-4C71-B509-8C5D3938A923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02C7CD77-969C-4BE4-9BE2-5DCDFA92392C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02C7CD77-969C-4BE4-9BE2-5DCDFA92392C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02C7CD77-969C-4BE4-9BE2-5DCDFA92392C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02C7CD77-969C-4BE4-9BE2-5DCDFA92392C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2AC4F15D-834C-4497-A9AD-5DF151741A17}
+	EndGlobalSection
+EndGlobal

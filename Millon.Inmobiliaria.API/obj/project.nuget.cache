@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FJpJJl8In+o5opVDbaEr0JzuUMP/K+UAqHHFW0yvnEgnuayEtjR9t62LcvzUixO6OshsZXySvzRil/IA/xZr/g==",
+  "success": true,
+  "projectFilePath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.API\\Millon.Inmobiliaria.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Yeiner\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.21\\microsoft.netcore.app.host.win-x64.3.1.21.nupkg.sha512"
+  ],
+  "logs": []
+}
