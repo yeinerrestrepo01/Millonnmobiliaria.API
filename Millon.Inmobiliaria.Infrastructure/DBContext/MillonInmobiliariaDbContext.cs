@@ -31,7 +31,7 @@ namespace Millon.Inmobiliaria.Infrastructure.DBContext
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=caselink-uat.cnv0nwwl9cp4.us-east-1.rds.amazonaws.com;Database=CASELINK;Trusted_Connection=False;User=sysSuper;password=Key12DG!;");
+                optionsBuilder.UseSqlServer("Server=LAPTOP-K991GUOR;Database=Millon;Trusted_Connection=False;User=sa;password=Complemento$0912;");
             }
         }
 

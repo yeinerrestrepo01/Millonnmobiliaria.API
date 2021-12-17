@@ -31,7 +31,7 @@ namespace Millon.Inmobiliaria.API
                   "asociados a la  inmobiliaria Millon"
                 });
             });
-            string connection = Configuration.GetConnectionString("MillonInmobiliariaDbContext");
+            string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<MillonInmobiliariaDbContext>(options => options.UseSqlServer(connection));
             services.AddControllers();
         }

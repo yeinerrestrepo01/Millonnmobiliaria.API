@@ -66,3 +66,6 @@ C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.API\bin\Debug\netcoreapp3
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.API\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.API\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.API\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.API.csproj.CopyComplete
