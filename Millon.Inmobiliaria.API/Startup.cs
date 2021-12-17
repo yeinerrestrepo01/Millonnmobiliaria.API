@@ -45,7 +45,7 @@ namespace Millon.Inmobiliaria.API
             }
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CaseLink.Core.WebApi v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Millon Inmobiliaria API v1"));
             app.UseRouting();
 
             app.UseAuthorization();
