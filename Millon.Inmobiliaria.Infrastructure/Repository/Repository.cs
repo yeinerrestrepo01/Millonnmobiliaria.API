@@ -30,179 +30,23 @@ namespace Millon.Inmobiliaria.Infrastructure.Repository
                 this._entities = dbcontext.Set<TEntity>();
             }
 
-            // Include lambda expressions in queries      
-            /// <summary>
-            /// Performs the inclusions.
-            /// </summary>
-            /// <param name="includeProperties">The include properties.</param>
-            /// <param name="query">The query.</param>
-            /// <returns>IQueryable&lt;TEntity&gt;.</returns>
-            private IQueryable<TEntity> PerformInclusions(IEnumerable<Expression<Func<TEntity, object>>> includeProperties,
-                                                    IQueryable<TEntity> query)
-            {
-                return includeProperties.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
-            }
+        #region IRepository<TEntity> Members
+        /// <summary>
+        /// Ases the queryable.
+        /// </summary>
+        /// <returns>IQueryable&lt;TEntity&gt;.</returns>
+        /// Retorna un objeto del tipo AsQueryable
+        public IQueryable<TEntity> AsQueryable()
+        {
+            return _entities.AsQueryable<TEntity>();
+        }
 
-
-            #region IRepository<TEntity> Members
-
-            /// <summary>
-            /// Ases the queryable.
-            /// </summary>
-            /// <returns>IQueryable&lt;TEntity&gt;.</returns>
-            /// Retorna un objeto del tipo AsQueryable
-            public IQueryable<TEntity> AsQueryable()
-            {
-                return _entities.AsQueryable<TEntity>();
-            }
-
-            /// <summary>
-            /// Gets all.
-            /// </summary>
-            /// <param name="includeProperties">The include properties.</param>
-            /// <returns>IEnumerable&lt;TEntity&gt;.</returns>
-            /// Retorna un objeto del tipo AsQueryable y acepta como parámetro las relaciones a incluir
-            public IEnumerable<TEntity> GetAll(params Expression<Func<TEntity, object>>[] includeProperties)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                return PerformInclusions(includeProperties, query);
-            }
-
-
-
-            /// <summary>
-            /// Finds the specified predicate.
-            /// </summary>
-            /// <param name="predicate">The predicate.</param>
-            /// <returns>TEntity.</returns>
-            public TEntity Find(Expression<Func<TEntity, bool>> predicate)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                return query.FirstOrDefault(predicate);
-            }
-
-            public IEnumerable<TEntity> FindAll(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                query = PerformInclusions(includeProperties, query);
-                return query.Where(where);
-            }
-
-            /// <summary>
-            /// Finds the specified where.
-            /// </summary>
-            /// <param name="where">The where.</param>
-            /// <param name="includeProperties">The include properties.</param>
-            /// <returns>IEnumerable&lt;TEntity&gt;.</returns>
-            /// Función que retorna una entidad, a partir de una consulta.
-            public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                query = PerformInclusions(includeProperties, query);
-                return query.Where(where);
-            }
-
-            /// <summary>
-            /// find as an asynchronous operation.
-            /// </summary>
-            /// <param name="predicate">The predicate.</param>
-            /// <returns>Task&lt;TEntity&gt;.</returns>
-            public async Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> predicate)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                return await query.FirstOrDefaultAsync(predicate);
-            }
-
-            /// <summary>
-            /// Firsts the specified where.
-            /// </summary>
-            /// <param name="where">The where.</param>
-            /// <param name="includeProperties">The include properties.</param>
-            /// <returns>TEntity.</returns>
-            /// Retorna la ultima entidad encontrada bajo una condición especificada
-            public TEntity First(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                query = PerformInclusions(includeProperties, query);
-                return query.First(where);
-            }
-
-            /// <summary>
-            /// Lasts the specified where.
-            /// </summary>
-            /// <param name="where">The where.</param>
-            /// <param name="includeProperties">The include properties.</param>
-            /// <returns>TEntity.</returns>
-            /// Retorna la primera entidad encontrada bajo una condición especificada
-            public TEntity Last(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                query = PerformInclusions(includeProperties, query);
-                return query.Last(where);
-            }
-
-            /// <summary>
-            /// Firsts the or default.
-            /// </summary>
-            /// <param name="where">The where.</param>
-            /// <param name="includeProperties">The include properties.</param>
-            /// <returns>TEntity.</returns>
-            /// Retorna la primera entidad encontrada bajo una condición especificada o null sino encontrara registros
-            public TEntity FirstOrDefault(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                query = PerformInclusions(includeProperties, query);
-                return query.FirstOrDefault(where);
-            }
-
-            /// <summary>
-            /// Lasts the or default.
-            /// </summary>
-            /// <param name="where">The where.</param>
-            /// <param name="includeProperties">The include properties.</param>
-            /// <returns>TEntity.</returns>
-            /// Retorna la ultima entidad encontrada bajo una condición especificada o null sino encontrara registros
-            public TEntity LastOrDefault(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                query = PerformInclusions(includeProperties, query);
-                return query.LastOrDefault(where);
-            }
-
-            /// <summary>
-            /// Singles the specified where.
-            /// </summary>
-            /// <param name="where">The where.</param>
-            /// <param name="includeProperties">The include properties.</param>
-            /// <returns>TEntity.</returns>
-            /// Retorna una entidad bajo una condición especificada
-            public TEntity Single(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                query = PerformInclusions(includeProperties, query);
-                return query.Single(where);
-            }
-
-            /// <summary>
-            /// Singles the or default.
-            /// </summary>
-            /// <param name="where">The where.</param>
-            /// <param name="includeProperties">The include properties.</param>
-            /// <returns>TEntity.</returns>
-            /// Retorna una entidad bajo una condición especificada o null sino encontrara registros
-            public TEntity SingleOrDefault(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties)
-            {
-                IQueryable<TEntity> query = AsQueryable();
-                query = PerformInclusions(includeProperties, query);
-                return query.SingleOrDefault(where);
-            }
-
-            /// <summary>
-            /// Inserts the specified entity.
-            /// </summary>
-            /// <param name="entity">The entity.</param>
-            /// Registra una entidad
-            public void Insert(TEntity entity)
+        /// <summary>
+        /// Inserts the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// Registra una entidad
+        public void Insert(TEntity entity)
             {
                 _entities.Add(entity);
             }
@@ -312,42 +156,6 @@ namespace Millon.Inmobiliaria.Infrastructure.Repository
                 {
                     _dbcontext.Entry(e).State = EntityState.Deleted;
                 }
-            }
-            #endregion
-
-
-            #region SQL Queries
-            // Execute query, return int
-            /// <summary>
-            /// Executes the SQL command.
-            /// </summary>
-            /// <param name="query">The query.</param>
-            /// <param name="parameters">The parameters.</param>
-            /// <returns>System.Int32.</returns>
-            public int ExecuteSqlCommand(string query, params object[] parameters)
-            {
-                return _dbcontext.Database.ExecuteSqlRaw(query, parameters);
-            }
-
-            /// <summary>
-            /// Execute Query
-            /// </summary>
-            /// <param name="query">The query.</param>
-            /// <returns>List Entity</returns>
-            public IEnumerable<TEntity> ExecuteReader(System.FormattableString query)
-            {
-                return _entities.FromSqlInterpolated(query);
-            }
-
-            /// <summary>
-            /// Executes the SQL query.
-            /// </summary>
-            /// <param name="query">The query.</param>
-            /// <param name="parameters">The parameters.</param>
-            /// <returns>IQueryable&lt;TEntity&gt;.</returns>
-            public async Task<List<TEntity>> ExecuteSqlQuery(string query, params object[] parameters)
-            {
-                return await _entities.FromSqlRaw(query, parameters).ToListAsync();
             }
             #endregion
         }

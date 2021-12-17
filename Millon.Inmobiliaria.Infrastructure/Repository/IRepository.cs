@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Millon.Inmobiliaria.Infrastructure.Repository
@@ -12,42 +10,6 @@ namespace Millon.Inmobiliaria.Infrastructure.Repository
 
         /// Retorna un objeto del tipo AsQueryable       
         IQueryable<TEntity> AsQueryable();
-
-
-        /// Retorna un objeto del tipo AsQueryable y acepta como parámetro las relaciones a incluir      
-        IEnumerable<TEntity> GetAll(params Expression<Func<TEntity, object>>[] includeProperties);
-
-
-        TEntity Find(Expression<Func<TEntity, bool>> predicate);
-
-        IEnumerable<TEntity> FindAll(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties);
-
-        /// Función que retorna una entidad, a partir de una consulta.       
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties);
-
-
-        /// Retorna la ultima entidad encontrada bajo una condición especificada      
-        TEntity First(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties);
-
-
-        /// Retorna la primera entidad encontrada bajo una condición especificada      
-        TEntity Last(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties);
-
-
-        /// Retorna la primera entidad encontrada bajo una condición especificada o null sino encontrara registros       
-        TEntity FirstOrDefault(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties);
-
-        /// Retorna la ultima entidad encontrada bajo una condición especificada o null sino encontrara registros       
-        TEntity LastOrDefault(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties);
-
-
-        /// Retorna una entidad bajo una condición especificada      
-        TEntity Single(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties);
-
-
-        /// Retorna una entidad bajo una condición especificada o null sino encontrara registros       
-        TEntity SingleOrDefault(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties);
-
 
         /// Registra una entidad       
         void Insert(TEntity entity);
@@ -81,12 +43,5 @@ namespace Millon.Inmobiliaria.Infrastructure.Repository
 
         #endregion
 
-
-        #region SQL Queries     
-
-        int ExecuteSqlCommand(string query, params object[] parameters);
-
-        Task<List<TEntity>> ExecuteSqlQuery(string query, params object[] parameters);
-        #endregion
     }
 }
