@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "K+tbBceJm3EHoeAlfoXoSfQBj53k31BYsqgm86DFLf/1HHJjii/q3HrdTqrT34lIYwZXUP0o6k4RYvglT6wAoA==",
+  "success": true,
+  "projectFilePath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Yeiner\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\Yeiner\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Yeiner\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
