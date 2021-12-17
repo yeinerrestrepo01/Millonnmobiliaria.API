@@ -27,6 +27,7 @@ namespace Millon.Inmobiliaria.Infrastructure.DBContext
         public virtual DbSet<Owner> Owner { get; set; }
         public virtual DbSet<Property> Property { get; set; }
         public virtual DbSet<PropertyImage> PropertyImage { get; set; }
+        public virtual DbSet<PropertyTrace> PropertyTrace { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

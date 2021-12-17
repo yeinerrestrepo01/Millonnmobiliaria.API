@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Millon.Inmobiliaria.Domain\Millon.Inmobiliaria.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GenericRepository\Implementation\" />
+  </ItemGroup>
+
 </Project>
