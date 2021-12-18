@@ -7,6 +7,7 @@ namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
     public interface IUnitOfwork
     {
         Repository<Owner> Owner { get; }
+        Repository<Property> Property { get; }
         void Dispose();
         int Save();
         Task<int> SaveAsync();

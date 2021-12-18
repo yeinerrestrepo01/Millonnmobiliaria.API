@@ -9,12 +9,18 @@ namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
     public class UnitOfwork : IUnitOfwork
     {
         private readonly MillonInmobiliariaDbContext _MillonInmobiliariaDbContext;
+
         private Repository<Owner> RepositoryOwner;
+
+        private Repository<Property> RepositoryProperty;
         public UnitOfwork(MillonInmobiliariaDbContext MillonInmobiliariaDbContext)
         {
             _MillonInmobiliariaDbContext = MillonInmobiliariaDbContext;
         }
-        
+
+        /// <summary>
+        /// Unidad de trabajo Repository<Owner> 
+        /// </summary>
         public Repository<Owner> Owner
         {
             get
@@ -23,6 +29,20 @@ namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
                     RepositoryOwner = new Repository<Owner>(_MillonInmobiliariaDbContext);
 
                 return RepositoryOwner;
+            }
+        }
+
+        /// <summary>
+        /// Unidad de tranajo Repository<Property> 
+        /// </summary>
+        public Repository<Property> Property
+        {
+            get
+            {
+                if (RepositoryProperty == null)
+                    RepositoryProperty = new Repository<Property>(_MillonInmobiliariaDbContext);
+
+                return RepositoryProperty;
             }
         }
 

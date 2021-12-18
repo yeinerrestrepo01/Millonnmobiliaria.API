@@ -1,14 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Millon.Inmobiliaria.Domain.Entities
+namespace Millon.Inmobiliaria.Domain.Request
 {
-    /// <summary>
-    ///  entidad Property
-    /// </summary>
-    public  class PropertyDto
+    public class PropertyRequest
     {
-        public int IdProperty { get; set; }
+        public PropertyRequest()
+        {
+            Status = 1;
+        }
         public string Name { get; set; }
         public string Address { get; set; }
         public double Price { get; set; }

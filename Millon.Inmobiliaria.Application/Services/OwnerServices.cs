@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Millon.Inmobiliaria.Application.Services
 {
+    /// <summary>
+    /// clase de servicio OwnerServices
+    /// </summary>
     public class OwnerServices : IOwnerServices
     {
         /// <summary>
@@ -16,8 +19,14 @@ namespace Millon.Inmobiliaria.Application.Services
         /// </summary>
         private readonly IOwnerRepository RepositoryOwner;
 
+        /// <summary>
+        /// objeto mapper MapperOwnerToOwnerDto
+        /// </summary>
         private readonly MapperMillon<Owner, OwnerDto> MapperOwnerToOwnerDto;
 
+        /// <summary>
+        /// objeto mapper MapperOwnerDtoToOwner
+        /// </summary>
         private readonly MapperMillon<OwnerResquest, Owner> MapperOwnerDtoToOwner;
 
         /// <summary>
