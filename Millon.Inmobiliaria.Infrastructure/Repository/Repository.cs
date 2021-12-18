@@ -58,6 +58,16 @@ namespace Millon.Inmobiliaria.Infrastructure.Repository
         }
 
         #region IRepository<TEntity> Members
+
+        /// <summary>
+        /// insert as an asynchronous operation.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <returns>Task.</returns>
+        public async Task InsertAsync(TEntity entity)
+        {
+            await _entities.AddAsync(entity);
+        }
         /// <summary>
         /// Ases the queryable.
         /// </summary>
@@ -89,16 +99,6 @@ namespace Millon.Inmobiliaria.Infrastructure.Repository
             {
                 _dbcontext.Entry(e).State = EntityState.Added;
             }
-        }
-
-        /// <summary>
-        /// insert as an asynchronous operation.
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <returns>Task.</returns>
-        public async Task InsertAsync(TEntity entity)
-        {
-            await _entities.AddAsync(entity);
         }
 
         /// <summary>

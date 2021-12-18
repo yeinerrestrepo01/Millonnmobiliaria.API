@@ -2,16 +2,23 @@
 using Millon.Inmobiliaria.Common;
 using Millon.Inmobiliaria.Domain.DTO;
 using Millon.Inmobiliaria.Domain.Entities;
+using Millon.Inmobiliaria.Domain.Request;
 using Millon.Inmobiliaria.Infrastructure.GenericRepository;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Millon.Inmobiliaria.Application.Services
 {
     public class OwnerServices : IOwnerServices
     {
+        /// <summary>
+        /// Implementaciones de Owner services
+        /// </summary>
         private readonly IOwnerRepository RepositoryOwner;
 
         private readonly MapperMillon<Owner, OwnerDto> MapperOwnerToOwnerDto;
+
+        private readonly MapperMillon<OwnerResquest, Owner> MapperOwnerDtoToOwner;
 
         /// <summary>
         /// Inicializador de clase OwnerServices
@@ -21,6 +28,26 @@ namespace Millon.Inmobiliaria.Application.Services
         {
             RepositoryOwner = repositoryOwner;
             MapperOwnerToOwnerDto = new MapperMillon<Owner, OwnerDto>();
+            MapperOwnerDtoToOwner = new MapperMillon<OwnerResquest, Owner>();
+        }
+
+        public async Task<ResponseDto<bool>> AddOwnerAsync(OwnerResquest Owner)
+        {
+            var Response = new ResponseDto<bool>();
+            var MapperOwner = MapperOwnerDtoToOwner.CrearMapper(Owner);
+            var ResultAdd = await RepositoryOwner.AddAsync(MapperOwner);
+
+            if (ResultAdd.Equals(0))
+            {
+                Response.StatusCode = 202;
+            }
+            else
+            {
+                Response.Message = Messages.Registro_Exitoso;
+                Response.Data = true;
+                Response.IsSuccess = true;
+            }
+            return Response;
         }
 
         /// <summary>

@@ -3,6 +3,7 @@ using Millon.Inmobiliaria.Infrastructure.DBContext;
 using Millon.Inmobiliaria.Infrastructure.UnitOfWork;
 using System.Linq;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Millon.Inmobiliaria.Infrastructure.GenericRepository.Implementation
 {
@@ -20,6 +21,12 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository.Implementation
         public OwnerRepository(MillonInmobiliariaDbContext MillonInmobiliariaDbContext)
         {
             _UnitWork = new UnitOfwork(MillonInmobiliariaDbContext);
+        }
+
+        public async Task<int> AddAsync(Owner Owner)
+        {
+            await _UnitWork.Owner.InsertAsync(Owner);
+            return await _UnitWork.SaveAsync();
         }
 
         /// <summary>
