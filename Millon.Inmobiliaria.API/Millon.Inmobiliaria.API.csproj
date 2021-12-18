@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Files\PropertyImage\" />
     <Folder Include="Files\Owner\" />
   </ItemGroup>
 
