@@ -28,6 +28,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj": {
+                "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj"
+              },
               "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\Millon.Inmobiliaria.Domain.csproj": {
                 "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\Millon.Inmobiliaria.Domain.csproj"
               },
@@ -46,6 +49,66 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj",
+        "projectName": "Millon.Inmobiliaria.Common",
+        "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj",
+        "packagesPath": "C:\\Users\\Yeiner\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Yeiner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

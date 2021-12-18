@@ -8,3 +8,10 @@ C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\obj\Debug\net
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Application.csproj.CoreCompileInputs.cache
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Application.dll
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Application.pdb
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.dll
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Domain.dll
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Infrastructure.dll
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.pdb
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Domain.pdb
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Infrastructure.pdb
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Application.csproj.CopyComplete

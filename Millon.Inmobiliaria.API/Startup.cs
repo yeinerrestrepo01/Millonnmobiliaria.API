@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Millon.Inmobiliaria.API.Middleware;
 using Millon.Inmobiliaria.Infrastructure.DBContext;
 
 namespace Millon.Inmobiliaria.API
@@ -33,6 +34,10 @@ namespace Millon.Inmobiliaria.API
             });
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<MillonInmobiliariaDbContext>(options => options.UseSqlServer(connection));
+
+            #region Register (dependency injection)
+            IoC.AddDependency(services);
+            #endregion
             services.AddControllers();
         }
 

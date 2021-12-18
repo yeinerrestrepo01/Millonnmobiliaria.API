@@ -1,12 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Millon.Inmobiliaria.Infrastructure.Repository
 {
     public interface IRepository<TEntity> where TEntity : class
     {
-        #region IRepository<T> Members
+
+        /// Retorna la primera entidad encontrada bajo una condición especificada o null sino encontrara registros       
+        TEntity FirstOrDefault(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includeProperties);
 
         /// Retorna un objeto del tipo AsQueryable       
         IQueryable<TEntity> AsQueryable();
@@ -40,8 +44,6 @@ namespace Millon.Inmobiliaria.Infrastructure.Repository
 
         /// Elimina un conjuto de entidades       
         void Delete(IEnumerable<TEntity> entities);
-
-        #endregion
 
     }
 }

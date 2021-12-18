@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Millon.Inmobiliaria.Common\Millon.Inmobiliaria.Common.csproj" />
     <ProjectReference Include="..\Millon.Inmobiliaria.Domain\Millon.Inmobiliaria.Domain.csproj" />
     <ProjectReference Include="..\Millon.Inmobiliaria.Infrastructure\Millon.Inmobiliaria.Infrastructure.csproj" />
   </ItemGroup>

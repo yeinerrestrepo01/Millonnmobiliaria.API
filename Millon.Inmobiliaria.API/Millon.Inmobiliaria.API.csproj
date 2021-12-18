@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Millon.Inmobiliaria.Application\Millon.Inmobiliaria.Application.csproj" />
     <ProjectReference Include="..\Millon.Inmobiliaria.Infrastructure\Millon.Inmobiliaria.Infrastructure.csproj" />
   </ItemGroup>
 

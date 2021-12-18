@@ -1,0 +1,10 @@
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Common\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.deps.json
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Common\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.dll
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Common\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.pdb
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Common\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.csproj.AssemblyReference.cache
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Common\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Common\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.AssemblyInfoInputs.cache
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Common\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.AssemblyInfo.cs
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Common\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.csproj.CoreCompileInputs.cache
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Common\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.dll
+C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Common\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.pdb

@@ -8,5 +8,7 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository
     public interface IOwnerRepository
     {
         List<Owner> GetAll();
+
+        Owner GetById(int idOwner);
     }
 }
