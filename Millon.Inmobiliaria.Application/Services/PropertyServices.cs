@@ -6,7 +6,7 @@ using Millon.Inmobiliaria.Domain.Request;
 using Millon.Inmobiliaria.Infrastructure.GenericRepository;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using System.Linq;
 namespace Millon.Inmobiliaria.Application.Services
 {
     /// <summary>
@@ -18,6 +18,8 @@ namespace Millon.Inmobiliaria.Application.Services
         /// Implementaciones de IPropertyRepository
         /// </summary>
         private readonly IPropertyRepository RepositoryProperty;
+
+        private readonly IOwnerRepository RepositoryOwner;
 
         /// <summary>
         /// objeto mapper MapperPropertyPropertyDto
@@ -33,11 +35,12 @@ namespace Millon.Inmobiliaria.Application.Services
         /// Inicializador de clase PropertyServices
         /// </summary>
         /// <param name="repositoryProperty"></param>
-        public PropertyServices(IPropertyRepository repositoryProperty)
+        public PropertyServices(IPropertyRepository repositoryProperty, IOwnerRepository repositoryOwner)
         {
             RepositoryProperty = repositoryProperty;
             MapperPropertyPropertyDto = new MapperMillon<Property, PropertyDto>();
             MapperPropertyDtoToProperty = new MapperMillon<PropertyRequest, Property>();
+            RepositoryOwner = repositoryOwner;
         }
 
         /// <summary>
@@ -48,18 +51,27 @@ namespace Millon.Inmobiliaria.Application.Services
         public async Task<ResponseDto<bool>> AddPropertyAsync(PropertyRequest Property)
         {
             var Response = new ResponseDto<bool>();
-            var MapperOwner = MapperPropertyDtoToProperty.CrearMapper(Property);
-            var ResultAdd = await RepositoryProperty.AddAsync(MapperOwner);
-
-            if (ResultAdd.Equals(0))
+            var IsOwnerValid = RepositoryOwner.GetById(Property.IdOwner);
+            if (IsOwnerValid == null)
             {
-                Response.StatusCode = 202;
+                Response.Message = Messages.No_Existe_Registro_Owner;
+                Response.StatusCode = 204;
             }
             else
             {
-                Response.Message = Messages.Registro_Exitoso;
-                Response.Data = true;
-                Response.IsSuccess = true;
+                var MapperOwner = MapperPropertyDtoToProperty.CrearMapper(Property);
+                var ResultAdd = await RepositoryProperty.AddAsync(MapperOwner);
+
+                if (ResultAdd.Equals(0))
+                {
+                    Response.StatusCode = 202;
+                }
+                else
+                {
+                    Response.Message = Messages.Registro_Exitoso;
+                    Response.Data = true;
+                    Response.IsSuccess = true;
+                }
             }
             return Response;
         }

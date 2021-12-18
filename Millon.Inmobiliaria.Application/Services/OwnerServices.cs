@@ -29,6 +29,8 @@ namespace Millon.Inmobiliaria.Application.Services
         /// </summary>
         private readonly MapperMillon<OwnerResquest, Owner> MapperOwnerDtoToOwner;
 
+        private readonly FileUpload FileUpload;
+
         /// <summary>
         /// Inicializador de clase OwnerServices
         /// </summary>
@@ -38,21 +40,31 @@ namespace Millon.Inmobiliaria.Application.Services
             RepositoryOwner = repositoryOwner;
             MapperOwnerToOwnerDto = new MapperMillon<Owner, OwnerDto>();
             MapperOwnerDtoToOwner = new MapperMillon<OwnerResquest, Owner>();
+            FileUpload = new FileUpload();
         }
 
         public async Task<ResponseDto<bool>> AddOwnerAsync(OwnerResquest Owner)
         {
-            var Response = new ResponseDto<bool>();
+            var Message = string.Empty;
+            var ResulFile =  FileUpload.SenFile(Owner.Photo, FilePath.PathFileOwner, ref Message);
             var MapperOwner = MapperOwnerDtoToOwner.CrearMapper(Owner);
-            var ResultAdd = await RepositoryOwner.AddAsync(MapperOwner);
+            MapperOwner.Photo = ResulFile;
+            var ResulAddOwner = await AddInformacionOwner(MapperOwner, Message);
+            return ResulAddOwner;
+        }
 
-            if (ResultAdd.Equals(0))
+        private async Task<ResponseDto<bool>> AddInformacionOwner(Owner Owner, string Message) 
+        {
+            var ResultAddOwner = await RepositoryOwner.AddAsync(Owner);
+            var Response = new ResponseDto<bool>();
+            if (ResultAddOwner.Equals(0))
             {
                 Response.StatusCode = 202;
+                Response.Message = Messages.Registro_No_Exitoso;
             }
             else
             {
-                Response.Message = Messages.Registro_Exitoso;
+                Response.Message = Messages.Registro_Exitoso + Message;
                 Response.Data = true;
                 Response.IsSuccess = true;
             }
@@ -80,7 +92,7 @@ namespace Millon.Inmobiliaria.Application.Services
             var GetEntity = RepositoryOwner.GetById(idOwner);
             if (GetEntity == null)
             {
-                Response.Message = Messages.No_Existe_Registro;
+                Response.Message = Messages.No_Existe_Registro_Owner;
                 Response.StatusCode = 204;
             }
             else

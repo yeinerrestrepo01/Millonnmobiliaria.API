@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Millon.Inmobiliaria.Application.Services.IServices;
-using Millon.Inmobiliaria.Domain.Entities;
 using Millon.Inmobiliaria.Domain.Request;
+using System;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -15,6 +16,11 @@ namespace Millon.Inmobiliaria.API.Controllers
     {
         private readonly IOwnerServices ServiceOwner;
 
+        /// <summary>
+        /// Inicializador de controller OwnerController
+        /// </summary>
+        /// <param name="serviceOwner">IOwnerServices</param>
+        /// <param name="env">IWebHostEnvironment</param>
         public OwnerController(IOwnerServices serviceOwner)
         {
             ServiceOwner = serviceOwner;
@@ -50,7 +56,7 @@ namespace Millon.Inmobiliaria.API.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Post([FromBody] OwnerResquest entity)
+        public async Task<IActionResult> Post([FromForm] OwnerResquest entity)
         {
             var Result = await ServiceOwner.AddOwnerAsync(entity);
             return StatusCode(Result.StatusCode, Result);

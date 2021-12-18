@@ -19,5 +19,9 @@
     <ProjectReference Include="..\Millon.Inmobiliaria.Infrastructure\Millon.Inmobiliaria.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Files\Owner\" />
+  </ItemGroup>
+
 
 </Project>

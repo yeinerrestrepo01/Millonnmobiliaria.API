@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "fdHz2K3Cygck5VhmfZFyxh6a37BWL7VQDcNZdalG+Zf8D9lQsmC6EqcXLm2ZYw+76bvTZKb4LWLD9mVt7Pq/Og==",
+  "dgSpecHash": "lOIDamlMr7Ses0oflg+ovcoEsmg9ulwqCckSLNb7eWJAoxB3PRhYeIOIb/sMMMsCKbRtzrwuIOONG/lIi2tlHw==",
   "success": true,
   "projectFilePath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\Millon.Inmobiliaria.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Yeiner\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.13\\microsoft.aspnetcore.http.features.5.0.13.nupkg.sha512",
+    "C:\\Users\\Yeiner\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Yeiner\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\Yeiner\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
