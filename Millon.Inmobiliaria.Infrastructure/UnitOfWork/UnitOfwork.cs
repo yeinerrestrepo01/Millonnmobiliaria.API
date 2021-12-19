@@ -1,13 +1,19 @@
 ﻿using Millon.Inmobiliaria.Domain.Entities;
 using Millon.Inmobiliaria.Infrastructure.DBContext;
+using Millon.Inmobiliaria.Infrastructure.GenericRepository.Implementation;
 using Millon.Inmobiliaria.Infrastructure.Repository;
 using System;
 using System.Threading.Tasks;
 
 namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
 {
+
+    /// <summary>
+    /// Clase para definiciones de unidades de trabajo
+    /// </summary>
     public class UnitOfwork : IUnitOfwork
     {
+
         private readonly MillonInmobiliariaDbContext _MillonInmobiliariaDbContext;
 
         private Repository<Owner> RepositoryOwner;
@@ -15,6 +21,8 @@ namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
         private Repository<Property> RepositoryProperty;
 
         private Repository<PropertyImage> RepositoryPropertyImage;
+
+        private Repository<PropertyTrace> PropertyTraceRepository;
         public UnitOfwork(MillonInmobiliariaDbContext MillonInmobiliariaDbContext)
         {
             _MillonInmobiliariaDbContext = MillonInmobiliariaDbContext;
@@ -35,7 +43,7 @@ namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
         }
 
         /// <summary>
-        /// Unidad de tranajo Repository<Property> 
+        /// Unidad de  Unidad de trabajo Repository<Property> 
         /// </summary>
         public Repository<Property> Property
         {
@@ -49,7 +57,7 @@ namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
         }
 
         /// <summary>
-        /// PropertyImage
+        ///  Unidad de  Unidad de trabajo PropertyImage
         /// </summary>
         public Repository<PropertyImage> PropertyImage
         {
@@ -59,6 +67,21 @@ namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
                     RepositoryPropertyImage = new Repository<PropertyImage>(_MillonInmobiliariaDbContext);
 
                 return RepositoryPropertyImage;
+            }
+        }
+
+        /// <summary>
+        ///  Unidad de  Unidad de trabajo PropertyTrace
+        /// </summary>
+
+        public Repository<PropertyTrace> PropertyTrace
+        {
+            get
+            {
+                if (PropertyTraceRepository == null)
+                    PropertyTraceRepository = new Repository<PropertyTrace>(_MillonInmobiliariaDbContext);
+
+                return PropertyTraceRepository;
             }
         }
 
