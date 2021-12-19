@@ -36,9 +36,9 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository.Implementation
         }
 
         /// <summary>
-        /// obtiene el listados de Property registrados en el sistema
+        /// Obtiene el listado de propertis
         /// </summary>
-        /// <returns>List<Property> </returns>
+        /// <returns></returns>
         public List<Property> GetAll()
         {
             return _UnitWork.Property.AsQueryable().ToList();

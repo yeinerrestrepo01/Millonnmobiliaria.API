@@ -47,6 +47,17 @@ namespace Millon.Inmobiliaria.Application.Services
         }
 
         /// <summary>
+        /// Obtiene un listado de Property
+        /// </summary>
+        /// <param name="idProperty"></param>
+        /// <returns></returns>
+        public List<PropertyDto> GetAll()
+        {
+            var ResultQuery = RepositoryProperty.GetAll();
+            return MapperPropertyPropertyDto.CrearMapper(ResultQuery);
+        }
+
+        /// <summary>
         /// Realzia la insercion de una Property
         /// </summary>
         /// <param name="Property"></param>
@@ -100,16 +111,6 @@ namespace Millon.Inmobiliaria.Application.Services
                 Response.Data = ResponsePropertyDetail;
             }
             return Response;
-        }
-
-        /// <summary>
-        /// lista todas las Property activas 
-        /// </summary>
-        /// <returns></returns>
-        public List<PropertyDto> GetAll()
-        {
-            var ResulQuery = RepositoryProperty.GetAll();
-            return MapperPropertyPropertyDto.CrearMapper(ResulQuery);
         }
 
         /// <summary>

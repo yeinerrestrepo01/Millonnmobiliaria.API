@@ -42,19 +42,6 @@ namespace Millon.Inmobiliaria.API.Controllers
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public IActionResult Get(int idProperty)
         {
-            var Result = ServicesProperty.GetById(idProperty);
-            return StatusCode(Result.StatusCode, Result);
-        } 
-        
-        // GET api/<PropertyController>/5
-        [HttpGet("/GetPropertyDetail/{idProperty}")]
-        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        [ProducesResponseType((int)HttpStatusCode.NoContent)]
-        public IActionResult GetPropertyDetail(int idProperty)
-        {
             var Result = ServicesProperty.GetByPropertyDetail(idProperty);
             return StatusCode(Result.StatusCode, Result);
         }
