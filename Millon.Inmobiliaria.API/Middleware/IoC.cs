@@ -28,12 +28,14 @@ namespace Millon.Inmobiliaria.API.Middleware
             services.AddTransient<IOwnerServices, OwnerServices>();
             services.AddTransient<IPropertyServices, PropertyServices>();
             services.AddTransient<IPropertyImageServices, PropertyImageServices>();
+            services.AddTransient<IPropertyTraceServices, PropertyTraceServices>();
             #endregion
 
             #region Repository
             services.AddTransient<IOwnerRepository, OwnerRepository>();
             services.AddTransient<IPropertyRepository, PropertyRepository>();
             services.AddTransient<IPropertyImageRepository, PropertyImageRepository>();
+            services.AddTransient<IPropertyTraceRepository, PropertyTraceRepository>();
             #endregion
 
             return services;
