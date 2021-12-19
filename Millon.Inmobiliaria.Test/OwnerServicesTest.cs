@@ -28,7 +28,7 @@ namespace Millon.Inmobiliaria.Test
         }
 
         [Test]
-        [Author("Jhoel Aicardi")]
+        [Author("Yeiner Merino")]
         public void GetAll_Owner()
         {
             // Arrange
