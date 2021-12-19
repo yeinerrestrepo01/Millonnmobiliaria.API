@@ -13,4 +13,3 @@ C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Infrastructure\obj\Debug\
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Infrastructure\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Infrastructure.dll
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Infrastructure\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Infrastructure.pdb
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Infrastructure\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Infrastructure.genruntimeconfig.cache
-C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Infrastructure\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Infrastructure.csproj.CopyComplete
