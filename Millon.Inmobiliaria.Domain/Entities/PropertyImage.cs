@@ -15,6 +15,6 @@ namespace Millon.Inmobiliaria.Domain.Entities
         public bool Enabled { get; set; }
 
         [ForeignKey("IdProperty")]
-        public virtual Owner PropertyNavegation { get; set; }
+        public virtual Property PropertyNavegation { get; set; }
     }
 }

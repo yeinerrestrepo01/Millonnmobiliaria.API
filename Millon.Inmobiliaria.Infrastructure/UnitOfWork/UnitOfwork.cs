@@ -13,6 +13,8 @@ namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
         private Repository<Owner> RepositoryOwner;
 
         private Repository<Property> RepositoryProperty;
+
+        private Repository<PropertyImage> RepositoryPropertyImage;
         public UnitOfwork(MillonInmobiliariaDbContext MillonInmobiliariaDbContext)
         {
             _MillonInmobiliariaDbContext = MillonInmobiliariaDbContext;
@@ -43,6 +45,20 @@ namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
                     RepositoryProperty = new Repository<Property>(_MillonInmobiliariaDbContext);
 
                 return RepositoryProperty;
+            }
+        }
+
+        /// <summary>
+        /// PropertyImage
+        /// </summary>
+        public Repository<PropertyImage> PropertyImage
+        {
+            get
+            {
+                if (RepositoryPropertyImage == null)
+                    RepositoryPropertyImage = new Repository<PropertyImage>(_MillonInmobiliariaDbContext);
+
+                return RepositoryPropertyImage;
             }
         }
 

@@ -8,6 +8,7 @@ namespace Millon.Inmobiliaria.Infrastructure.UnitOfWork
     {
         Repository<Owner> Owner { get; }
         Repository<Property> Property { get; }
+        Repository<PropertyImage> PropertyImage { get; }
         void Dispose();
         int Save();
         Task<int> SaveAsync();

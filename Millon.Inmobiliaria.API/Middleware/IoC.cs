@@ -32,6 +32,7 @@ namespace Millon.Inmobiliaria.API.Middleware
             #region Repository
             services.AddTransient<IOwnerRepository, OwnerRepository>();
             services.AddTransient<IPropertyRepository, PropertyRepository>();
+            services.AddTransient<IPropertyImageRepository, PropertyImageRepository>();
             #endregion
 
             return services;

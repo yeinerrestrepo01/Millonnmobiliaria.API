@@ -15,10 +15,13 @@ namespace Millon.Inmobiliaria.Application.Services
     public class PropertyServices: IPropertyServices
     {
         /// <summary>
-        /// Implementaciones de IPropertyRepository
+        /// Interface de IPropertyRepository
         /// </summary>
         private readonly IPropertyRepository RepositoryProperty;
 
+        /// <summary>
+        /// Interface IOwnerRepository
+        /// </summary>
         private readonly IOwnerRepository RepositoryOwner;
 
         /// <summary>
