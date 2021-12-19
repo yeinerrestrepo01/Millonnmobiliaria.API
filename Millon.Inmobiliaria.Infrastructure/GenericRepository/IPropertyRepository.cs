@@ -13,5 +13,6 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository
         Property GetById(int idProperty);
         PropertyDetailDto GetByPropertyDetail(int idProperty);
         Task<int> AddAsync(Property Property);
+        Task<int> UpdateAsync(Property Property);
     }
 }

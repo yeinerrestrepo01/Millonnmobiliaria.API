@@ -70,5 +70,16 @@ namespace Millon.Inmobiliaria.API.Controllers
             var Result = await ServicesProperty.AddPropertyAsync(entity);
             return StatusCode(Result.StatusCode, Result);
         }
+
+        [HttpPut("{idProperty}")]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> Put(int idProperty, [FromBody] PropertyUpdatePriceRequest entity)
+        {
+            var Result = await ServicesProperty.UpdatePrice(idProperty, entity);
+            return StatusCode(Result.StatusCode, Result);
+        }
     }
 }

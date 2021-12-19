@@ -134,5 +134,25 @@ namespace Millon.Inmobiliaria.Application.Services
             }
             return Response;
         }
+
+        public async Task<ResponseDto<bool>> UpdatePrice(int idProPerty,PropertyUpdatePriceRequest Property)
+        {
+            var Response = new ResponseDto<bool>();
+            var GetEntity = RepositoryProperty.GetById(idProPerty);
+            if (GetEntity == null)
+            {
+                Response.Message = Messages.No_Existe_Registro;
+                Response.StatusCode = 204;
+            }
+            else
+            {
+                GetEntity.Price = Property.NewPrice;
+                await RepositoryProperty.UpdateAsync(GetEntity);
+                Response.Message = Messages.Consulta_Exitosa;
+                Response.IsSuccess = true;
+                Response.Data = true;
+            }
+            return Response;
+        }
     }
 }

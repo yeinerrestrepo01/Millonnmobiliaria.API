@@ -76,6 +76,17 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository.Implementation
                                     }).FirstOrDefault();
             return resultadoQueryDeatil;
         }
+
+        /// <summary>
+        /// Actualiaza el objeto Property
+        /// </summary>
+        /// <param name="Property"></param>
+        /// <returns></returns>
+        public async Task<int> UpdateAsync(Property Property)
+        {
+            _UnitWork.Property.Update(Property);
+            return await _UnitWork.SaveAsync();
+        }
     }
 }
 
