@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Millon.Inmobiliaria.Infrastructure.DBContext;
 
 namespace Millon.Inmobiliaria.Infrastructure.Migrations
 {
     [DbContext(typeof(MillonInmobiliariaDbContext))]
-    partial class MillonInmobiliariaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211219131845_Add_FK_propertyTrace_MoneyType")]
+    partial class Add_FK_propertyTrace_MoneyType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
