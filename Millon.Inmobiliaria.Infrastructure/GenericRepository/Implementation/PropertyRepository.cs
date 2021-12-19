@@ -61,23 +61,21 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository.Implementation
         /// <returns></returns>
         public PropertyDetailDto GetByPropertyDetail(int idProperty)
         {
-            var resultadoQueryDeatil = (from property in _UnitWork.Property.AsQueryable()
-                                        join owner in _UnitWork.Owner.AsQueryable() on property.IdOwner equals owner.IdOwner
-                                        join propertyImage in _UnitWork.PropertyImage.AsQueryable() on property.IdProperty equals propertyImage.IdProperty
-                                        where propertyImage.Enabled.Equals(true)
-                                        select new PropertyDetailDto
-                                        {
-                                            IdProperty = property.IdProperty,
-                                            Address = property.Address,
-                                            CodeInternal = property.CodeInternal,
-                                            Name = property.Name,
-                                            Owner = owner.Name,
-                                            Photo = _UnitWork.PropertyImage.AsQueryable().Where(t=> t.IdProperty == property.IdProperty).Select(t=> t.File).ToList(),
-                                            Price = property.Price,
-                                            Year = property.Year,
-                                        }
-                                       ).FirstOrDefault();
+            var resultadoQueryDeatil = _UnitWork.Property.AsQueryable().ToList()
+                                    .Where(r => r.IdProperty == idProperty)
+                                    .Select(t => new PropertyDetailDto
+                                    {
+                                        IdProperty = t.IdProperty,
+                                        Address = t.Address,
+                                        CodeInternal = t.CodeInternal,
+                                        Name = t.Name,
+                                        OwnerName = _UnitWork.Owner.AsQueryable().Where(o=> o.IdOwner == t.IdOwner).FirstOrDefault().Name,
+                                        Photo = _UnitWork.PropertyImage.AsQueryable().Where(t => t.IdProperty == idProperty).Select(t => t.File).ToList(),
+                                        Price = t.Price,
+                                        Year = t.Year
+                                    }).FirstOrDefault();
             return resultadoQueryDeatil;
         }
     }
 }
+

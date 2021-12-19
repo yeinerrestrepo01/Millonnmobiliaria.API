@@ -13,7 +13,7 @@ namespace Millon.Inmobiliaria.Domain.DTO
         public string CodeInternal { get; set; }
         public int Year { get; set; }
         public List<string> Photo { get; set; }
-        public string Owner { get; set; }
+        public string OwnerName { get; set; }
        
     }
 }
