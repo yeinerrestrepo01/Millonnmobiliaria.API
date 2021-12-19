@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Millon.Inmobiliaria.Infrastructure.DBContext;
 
 namespace Millon.Inmobiliaria.Infrastructure.Migrations
 {
     [DbContext(typeof(MillonInmobiliariaDbContext))]
-    partial class MillonInmobiliariaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211219130344_Drop_Table_MoneyType")]
+    partial class Drop_Table_MoneyType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,7 +31,7 @@ namespace Millon.Inmobiliaria.Infrastructure.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ShortName")
+                    b.Property<string>("shortName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdMoneyType");
@@ -129,6 +131,9 @@ namespace Millon.Inmobiliaria.Infrastructure.Migrations
                     b.Property<DateTime>("DateSale")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("IdMoneyType")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdProperty")
                         .HasColumnType("int");
 
@@ -142,6 +147,8 @@ namespace Millon.Inmobiliaria.Infrastructure.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("IdPropertyTrace");
+
+                    b.HasIndex("IdMoneyType");
 
                     b.HasIndex("IdProperty");
 
@@ -172,6 +179,12 @@ namespace Millon.Inmobiliaria.Infrastructure.Migrations
 
             modelBuilder.Entity("Millon.Inmobiliaria.Domain.Entities.PropertyTrace", b =>
                 {
+                    b.HasOne("Millon.Inmobiliaria.Domain.Entities.MoneyType", "MoneyTypeNavegation")
+                        .WithMany()
+                        .HasForeignKey("IdMoneyType")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Millon.Inmobiliaria.Domain.Entities.Property", "IdPropertyNavegation")
                         .WithMany()
                         .HasForeignKey("IdProperty")
@@ -179,6 +192,8 @@ namespace Millon.Inmobiliaria.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("IdPropertyNavegation");
+
+                    b.Navigation("MoneyTypeNavegation");
                 });
 #pragma warning restore 612, 618
         }

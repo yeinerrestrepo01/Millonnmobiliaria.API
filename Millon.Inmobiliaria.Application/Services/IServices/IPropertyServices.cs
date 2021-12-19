@@ -13,5 +13,6 @@ namespace Millon.Inmobiliaria.Application.Services.IServices
         List<PropertyDto> GetAll();
         ResponseDto<PropertyDto> GetById(int idProperty);
         Task<ResponseDto<bool>> AddPropertyAsync(PropertyRequest Property);
+        ResponseDto<PropertyDetailDto> GetByPropertyDetail(int idProperty);
     }
 }

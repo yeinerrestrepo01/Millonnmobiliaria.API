@@ -29,6 +29,9 @@ namespace Millon.Inmobiliaria.Application.Services
         /// </summary>
         private readonly MapperMillon<OwnerResquest, Owner> MapperOwnerDtoToOwner;
 
+        /// <summary>
+        /// Objeto para manejador de archivos
+        /// </summary>
         private readonly FileUpload FileUpload;
 
         /// <summary>
@@ -51,24 +54,6 @@ namespace Millon.Inmobiliaria.Application.Services
             MapperOwner.Photo = ResulFile;
             var ResulAddOwner = await AddInformacionOwner(MapperOwner, Message);
             return ResulAddOwner;
-        }
-
-        private async Task<ResponseDto<bool>> AddInformacionOwner(Owner Owner, string Message) 
-        {
-            var ResultAddOwner = await RepositoryOwner.AddAsync(Owner);
-            var Response = new ResponseDto<bool>();
-            if (ResultAddOwner.Equals(0))
-            {
-                Response.StatusCode = 202;
-                Response.Message = Messages.Registro_No_Exitoso;
-            }
-            else
-            {
-                Response.Message = Messages.Registro_Exitoso + Message;
-                Response.Data = true;
-                Response.IsSuccess = true;
-            }
-            return Response;
         }
 
         /// <summary>
@@ -100,6 +85,24 @@ namespace Millon.Inmobiliaria.Application.Services
                 Response.Message = Messages.Consulta_Exitosa;
                 Response.IsSuccess = true;
                 Response.Data = MapperOwnerToOwnerDto.CrearMapper(GetEntity);
+            }
+            return Response;
+        }
+
+        private async Task<ResponseDto<bool>> AddInformacionOwner(Owner Owner, string Message)
+        {
+            var ResultAddOwner = await RepositoryOwner.AddAsync(Owner);
+            var Response = new ResponseDto<bool>();
+            if (ResultAddOwner.Equals(0))
+            {
+                Response.StatusCode = 202;
+                Response.Message = Messages.Registro_No_Exitoso;
+            }
+            else
+            {
+                Response.Message = Messages.Registro_Exitoso + Message;
+                Response.Data = true;
+                Response.IsSuccess = true;
             }
             return Response;
         }

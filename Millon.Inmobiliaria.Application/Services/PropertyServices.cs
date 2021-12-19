@@ -30,9 +30,9 @@ namespace Millon.Inmobiliaria.Application.Services
         private readonly MapperMillon<Property, PropertyDto> MapperPropertyPropertyDto;
 
         /// <summary>
-        /// objeto mapper MapperPropertyDtoToProperty
+        /// objeto mapper MapperPropertyRequestToProperty
         /// </summary>
-        private readonly MapperMillon<PropertyRequest, Property> MapperPropertyDtoToProperty;
+        private readonly MapperMillon<PropertyRequest, Property> MapperPropertyRequestToProperty;
 
         /// <summary>
         /// Inicializador de clase PropertyServices
@@ -42,7 +42,7 @@ namespace Millon.Inmobiliaria.Application.Services
         {
             RepositoryProperty = repositoryProperty;
             MapperPropertyPropertyDto = new MapperMillon<Property, PropertyDto>();
-            MapperPropertyDtoToProperty = new MapperMillon<PropertyRequest, Property>();
+            MapperPropertyRequestToProperty = new MapperMillon<PropertyRequest, Property>();
             RepositoryOwner = repositoryOwner;
         }
 
@@ -62,7 +62,7 @@ namespace Millon.Inmobiliaria.Application.Services
             }
             else
             {
-                var MapperOwner = MapperPropertyDtoToProperty.CrearMapper(Property);
+                var MapperOwner = MapperPropertyRequestToProperty.CrearMapper(Property);
                 var ResultAdd = await RepositoryProperty.AddAsync(MapperOwner);
 
                 if (ResultAdd.Equals(0))
@@ -75,6 +75,29 @@ namespace Millon.Inmobiliaria.Application.Services
                     Response.Data = true;
                     Response.IsSuccess = true;
                 }
+            }
+            return Response;
+        }
+
+        /// <summary>
+        /// Obtiene el detalle de parametrizacion de una property, Image, Owner
+        /// </summary>
+        /// <param name="idProperty"></param>
+        /// <returns></returns>
+        public ResponseDto<PropertyDetailDto> GetByPropertyDetail(int idProperty)
+        {
+            var Response = new ResponseDto<PropertyDetailDto>();
+            var ResponsePropertyDetail = RepositoryProperty.GetByPropertyDetail(idProperty);
+            if (ResponsePropertyDetail == null)
+            {
+                Response.Message = Messages.No_Existe_Registro;
+                Response.StatusCode = 204;
+            }
+            else
+            {
+                Response.Message = Messages.Consulta_Exitosa;
+                Response.IsSuccess = true;
+                Response.Data = ResponsePropertyDetail;
             }
             return Response;
         }

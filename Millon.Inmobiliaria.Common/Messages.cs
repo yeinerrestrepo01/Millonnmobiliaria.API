@@ -9,6 +9,8 @@
 
         public const string No_Existe_Registro_Owner = "No existe informacion relacionada con el Owner ingresado";
 
+        public const string No_Existe_Registro_Property = "No existe informacion relacionada con la property ingresada";
+
         public const string Consulta_Exitosa = "Consulta realizada con exito";
 
         public const string Registro_Exitoso = "Proceso de registro realizado exitosamente";

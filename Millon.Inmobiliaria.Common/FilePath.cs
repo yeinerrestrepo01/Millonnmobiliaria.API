@@ -7,5 +7,7 @@ namespace Millon.Inmobiliaria.Common
     public static class FilePath
     {
         public const string PathFileOwner = "Files\\Owner\\";
+
+        public const string PathFileProperty = "Files\\PropertyImage\\";
     }
 }

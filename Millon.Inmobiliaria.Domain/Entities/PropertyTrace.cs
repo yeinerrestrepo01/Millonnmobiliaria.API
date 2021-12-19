@@ -16,8 +16,12 @@ namespace Millon.Inmobiliaria.Domain.Entities
         public double Value { get; set; }
         public double Tax { get; set; }
         public int IdProperty { get; set; }
+        //public int IdMoneyType { get; set; }
 
         [ForeignKey("IdProperty")]
         public virtual Property IdPropertyNavegation { get; set; }
+
+        //[ForeignKey("IdMoneyType")]
+        //public virtual MoneyType MoneyTypeNavegation { get; set; }
     }
 }

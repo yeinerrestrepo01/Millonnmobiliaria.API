@@ -43,7 +43,7 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository.Implementation
         /// <summary>
         /// Busca un PropertyImage en especifico
         /// </summary>
-        /// <param name="idOwner"></param>
+        /// <param name="idPropertyImage"></param>
         /// <returns></returns>
         public PropertyImage GetById(int idPropertyImage)
         {

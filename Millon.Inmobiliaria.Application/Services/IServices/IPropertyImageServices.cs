@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Millon.Inmobiliaria.Application.Services.IServices
 {
-    interface IPropertyImageServices
+    public interface IPropertyImageServices
     {
         List<PropertyImageDto> GetAll();
-        ResponseDto<PropertyImageDto> GetByIdProperty(int idProperty);
+        ResponseDto<PropertyImageDto> GetById(int idPropertyImage);
         Task<ResponseDto<bool>> AddPropertyImageAsync(PropertyImageRequest Property);
     }
 }

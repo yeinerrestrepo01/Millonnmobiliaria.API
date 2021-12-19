@@ -1,4 +1,5 @@
-﻿using Millon.Inmobiliaria.Domain.Entities;
+﻿using Millon.Inmobiliaria.Domain.DTO;
+using Millon.Inmobiliaria.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository
     {
         List<Property> GetAll();
         Property GetById(int idProperty);
+        PropertyDetailDto GetByPropertyDetail(int idProperty);
         Task<int> AddAsync(Property Property);
     }
 }
