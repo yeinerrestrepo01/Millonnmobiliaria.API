@@ -1,0 +1,359 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Test\\Millon.Inmobiliaria.Test.csproj": {}
+  },
+  "projects": {
+    "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Application\\Millon.Inmobiliaria.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Application\\Millon.Inmobiliaria.Application.csproj",
+        "projectName": "Millon.Inmobiliaria.Application",
+        "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Application\\Millon.Inmobiliaria.Application.csproj",
+        "packagesPath": "C:\\Users\\Yeiner\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Yeiner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj": {
+                "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj"
+              },
+              "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\Millon.Inmobiliaria.Domain.csproj": {
+                "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\Millon.Inmobiliaria.Domain.csproj"
+              },
+              "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Infrastructure\\Millon.Inmobiliaria.Infrastructure.csproj": {
+                "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Infrastructure\\Millon.Inmobiliaria.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj",
+        "projectName": "Millon.Inmobiliaria.Common",
+        "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\Millon.Inmobiliaria.Common.csproj",
+        "packagesPath": "C:\\Users\\Yeiner\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Yeiner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\Millon.Inmobiliaria.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\Millon.Inmobiliaria.Domain.csproj",
+        "projectName": "Millon.Inmobiliaria.Domain",
+        "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\Millon.Inmobiliaria.Domain.csproj",
+        "packagesPath": "C:\\Users\\Yeiner\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Yeiner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Infrastructure\\Millon.Inmobiliaria.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Infrastructure\\Millon.Inmobiliaria.Infrastructure.csproj",
+        "projectName": "Millon.Inmobiliaria.Infrastructure",
+        "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Infrastructure\\Millon.Inmobiliaria.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Yeiner\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Yeiner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\Millon.Inmobiliaria.Domain.csproj": {
+                "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Domain\\Millon.Inmobiliaria.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Test\\Millon.Inmobiliaria.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Test\\Millon.Inmobiliaria.Test.csproj",
+        "projectName": "Millon.Inmobiliaria.Test",
+        "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Test\\Millon.Inmobiliaria.Test.csproj",
+        "packagesPath": "C:\\Users\\Yeiner\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Yeiner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Application\\Millon.Inmobiliaria.Application.csproj": {
+                "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Application\\Millon.Inmobiliaria.Application.csproj"
+              },
+              "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Infrastructure\\Millon.Inmobiliaria.Infrastructure.csproj": {
+                "projectPath": "C:\\Proyectos\\Millonnmobiliaria.API\\Millon.Inmobiliaria.Infrastructure\\Millon.Inmobiliaria.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.17.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
