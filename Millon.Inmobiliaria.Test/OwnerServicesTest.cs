@@ -98,7 +98,7 @@ namespace Millon.Inmobiliaria.Test
         [Author("Yeiner Merino")]
         public async Task Add_Owner_OK()
         {
-            
+
             // Arrange
             var service = this.CreateService();
             var FileMock = new Mock<IFormFile>();
