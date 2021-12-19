@@ -1,7 +1,6 @@
 ﻿using Millon.Inmobiliaria.Domain.Entities;
 using Millon.Inmobiliaria.Infrastructure.DBContext;
 using Millon.Inmobiliaria.Infrastructure.UnitOfWork;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
