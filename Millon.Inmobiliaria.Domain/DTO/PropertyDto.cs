@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
+﻿using Millon.Inmobiliaria.Domain.Emun;
 namespace Millon.Inmobiliaria.Domain.Entities
 {
     /// <summary>
@@ -8,6 +6,13 @@ namespace Millon.Inmobiliaria.Domain.Entities
     /// </summary>
     public  class PropertyDto
     {
+        /// <summary>
+        ///  PropertyDto
+        /// </summary>
+        public PropertyDto()
+        {
+            Status = (int)StatatusPropertysEmun.Disponible;
+        }
         public int IdProperty { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }

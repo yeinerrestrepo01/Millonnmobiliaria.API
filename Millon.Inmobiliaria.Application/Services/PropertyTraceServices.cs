@@ -1,6 +1,7 @@
 ﻿using Millon.Inmobiliaria.Application.Services.IServices;
 using Millon.Inmobiliaria.Common;
 using Millon.Inmobiliaria.Domain.DTO;
+using Millon.Inmobiliaria.Domain.Emun;
 using Millon.Inmobiliaria.Domain.Entities;
 using Millon.Inmobiliaria.Domain.Request;
 using Millon.Inmobiliaria.Infrastructure.GenericRepository;
@@ -69,6 +70,8 @@ namespace Millon.Inmobiliaria.Application.Services
                 }
                 else
                 {
+                    IsPropertyValid.Status = (int)StatatusPropertysEmun.Vendido;
+                    await RepositoryProperty.UpdateAsync(IsPropertyValid);
                     Response.Message = Messages.Registro_Exitoso;
                     Response.Data = true;
                     Response.IsSuccess = true;

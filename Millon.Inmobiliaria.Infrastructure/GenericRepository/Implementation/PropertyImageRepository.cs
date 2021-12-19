@@ -37,7 +37,7 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository.Implementation
         /// <returns></returns>
         public List<PropertyImage> GetAll()
         {
-            return _UnitWork.PropertyImage.AsQueryable().ToList();
+            return _UnitWork.PropertyImage.AsQueryable().Where(t=> t.Enabled.Equals(true)).ToList();
         }
 
         /// <summary>
