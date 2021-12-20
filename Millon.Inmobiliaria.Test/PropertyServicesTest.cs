@@ -146,5 +146,33 @@ namespace Millon.Inmobiliaria.Test
             Assert.AreEqual(true, AddOwner.IsSuccess);
             this.mockRepository.VerifyAll();
         }
+
+        [Test]
+        [Author("Yeiner Merino")]
+        public async Task UpdatePrecioProperty_OK()
+        {
+            var service = this.CreateService();
+
+            var Property = new Property()
+            {
+                IdOwner = 1,
+                IdProperty = 1,
+                Name = "Prueba carga",
+                Address = "Calle via al mar",
+                CodeInternal = "123-ABC",
+                Price = 1230000,
+                Year = 2019
+            };
+
+            this.mockPropertyRepository.Setup(s => s.GetById(1)).Returns(Property);
+
+            this.mockPropertyRepository.Setup(s => s.UpdateAsync(It.IsAny<Property>())).ReturnsAsync(1);
+
+            var PropertyUpdatePriceRequest = new PropertyUpdatePriceRequest { NewPrice = 10000000 };
+
+            var UpdatePriceResult = await service.UpdatePrice(1,PropertyUpdatePriceRequest);
+            Assert.AreEqual(true, UpdatePriceResult.IsSuccess);
+            this.mockRepository.VerifyAll();
+        }
     }
 }

@@ -5,6 +5,6 @@ namespace Millon.Inmobiliaria.Domain.Request
     public class PropertyUpdatePriceRequest
     {
         [Required]
-        public long NewPrice { get; set; }
+        public double NewPrice { get; set; }
     }
 }
