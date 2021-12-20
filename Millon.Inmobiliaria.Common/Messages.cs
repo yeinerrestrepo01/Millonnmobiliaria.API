@@ -15,6 +15,8 @@
 
         public const string Registro_Exitoso = "Proceso de registro realizado exitosamente";
 
+        public const string Actualizacion_Exitosa = "Proceso de actualizacion se ha realizado exitosamente";
+
         public const string Registro_No_Exitoso = "No se pudo completar el proceso de registro";
 
         public const string Registro_Sin_Imagen = "No se pudo cargar la imagen asociada";

@@ -49,5 +49,16 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository.Implementation
         {
             return _UnitWork.PropertyImage.FirstOrDefault(o => o.IdPropertyImage == idPropertyImage);
         }
+
+        /// <summary>
+        /// Realiza la actualizando del objeto PropertyImage
+        /// </summary>
+        /// <param name="PropertyImage"></param>
+        /// <returns></returns>
+        public async Task<int> UpdateAsync(PropertyImage PropertyImage)
+        {
+            _UnitWork.PropertyImage.Update(PropertyImage);
+            return await _UnitWork.SaveAsync();
+        }
     }
 }

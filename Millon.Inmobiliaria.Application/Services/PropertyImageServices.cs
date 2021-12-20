@@ -39,6 +39,11 @@ namespace Millon.Inmobiliaria.Application.Services
         private readonly FileUpload FileUpload;
 
         /// <summary>
+        /// Objeto de respuesta genreico
+        /// </summary>
+        private   ResponseDto<bool> ResponseDto;
+
+        /// <summary>
         /// Inicializador de clase PropertyImageServices
         /// </summary>
         /// <param name="repositoryProperty"></param>
@@ -51,6 +56,7 @@ namespace Millon.Inmobiliaria.Application.Services
             MapperPropertyImagePropertyImageDto = new MapperMillon<PropertyImage, PropertyImageDto>();
             MapperPropertyImageRequestToPropertyImage = new MapperMillon<PropertyImageRequest, PropertyImage>();
             FileUpload = new FileUpload();
+            ResponseDto = new ResponseDto<bool>();
         }
 
         /// <summary>
@@ -61,20 +67,20 @@ namespace Millon.Inmobiliaria.Application.Services
         public async Task<ResponseDto<bool>> AddPropertyImageAsync(PropertyImageRequest Property)
         {
             var Message = string.Empty;
-            var ResultAdd = new ResponseDto<bool>();
+            
             var IsPropertyValid = RepositoryProperty.GetById(Property.IdProperty);
             if (IsPropertyValid == null)
             {
-                ResultAdd.Message = Messages.No_Existe_Registro_Owner;
-                ResultAdd.StatusCode = 204;
+                ResponseDto.Message = Messages.No_Existe_Registro_Property;
+                ResponseDto.StatusCode = 204;
             }
             else
             {
                 var ResulFile = FileUpload.SenFile(Property.File, FilePath.PathFileProperty, ref Message);
-                ResultAdd = await AddInformacionPropertyImageRequest(Property, Message, ResulFile);
+                ResponseDto = await AddInformacionPropertyImageRequest(Property, Message, ResulFile);
                 
             }
-            return ResultAdd;
+            return ResponseDto;
         }
 
         /// <summary>
@@ -130,22 +136,47 @@ namespace Millon.Inmobiliaria.Application.Services
         /// <returns></returns>
         private async Task<ResponseDto<bool>> AddInformacionPropertyImageRequest(PropertyImageRequest Property, string Message, string FilePath)
         {
-            var Response = new ResponseDto<bool>();
             var MapperPropeertyImage = MapperPropertyImageRequestToPropertyImage.CrearMapper(Property);
             MapperPropeertyImage.File = FilePath;
             var ResultAdd = await RepositoryPropertyImage.AddAsync(MapperPropeertyImage);
 
             if (ResultAdd.Equals(0))
             {
-                Response.StatusCode = 202;
+                ResponseDto.StatusCode = 202;
             }
             else
             {
-                Response.Message = Messages.Registro_Exitoso + Message; ;
-                Response.Data = true;
-                Response.IsSuccess = true;
+                ResponseDto.Message = Messages.Registro_Exitoso + Message; ;
+                ResponseDto.Data = true;
+                ResponseDto.IsSuccess = true;
             }
-            return Response;
+            return ResponseDto;
+        }
+
+        /// <summary>
+        /// Realiza la actualizacion de una imagen en especifico asociada a una poperty
+        /// </summary>
+        /// <param name="Property"></param>
+        /// <returns></returns>
+        public async Task<ResponseDto<bool>> UpddatePropertyImageAsync(int idPropertyImage,PropertyImageUpdateRequest Property)
+        {
+            var Message = string.Empty;
+            var IsPropertyValid = RepositoryPropertyImage.GetById(idPropertyImage);
+            if (IsPropertyValid == null)
+            {
+                ResponseDto.Message = Messages.No_Existe_Registro_Property;
+                ResponseDto.StatusCode = 204;
+            }
+            else
+            {
+                var ResulFile = FileUpload.SenFile(Property.File, FilePath.PathFileProperty, ref Message);
+                IsPropertyValid.File = ResulFile;
+                await RepositoryPropertyImage.UpdateAsync(IsPropertyValid);
+                ResponseDto.Message = Messages.Actualizacion_Exitosa;
+                ResponseDto.IsSuccess = true;
+                ResponseDto.Data = true;
+            }
+            return ResponseDto;
         }
     }
 }

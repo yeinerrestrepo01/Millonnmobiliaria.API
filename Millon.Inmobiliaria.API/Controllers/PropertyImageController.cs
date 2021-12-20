@@ -63,9 +63,15 @@ namespace Millon.Inmobiliaria.API.Controllers
         }
 
         // PUT api/<PropertyImageController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{idPropertyImage}")]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Accepted)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> Put(int idPropertyImage, [FromForm] PropertyImageUpdateRequest value)
         {
+            var Result = await ServicesPropertyImage.UpddatePropertyImageAsync(idPropertyImage,value);
+            return StatusCode(Result.StatusCode, Result);
         }
     }
 }

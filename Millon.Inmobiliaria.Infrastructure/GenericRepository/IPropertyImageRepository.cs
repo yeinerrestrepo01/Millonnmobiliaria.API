@@ -11,5 +11,6 @@ namespace Millon.Inmobiliaria.Infrastructure.GenericRepository
         List<PropertyImage> GetAll();
         PropertyImage GetById(int idPropertyImage);
         Task<int> AddAsync(PropertyImage PropertyImage);
+        Task<int> UpdateAsync(PropertyImage PropertyImage);
     }
 }
