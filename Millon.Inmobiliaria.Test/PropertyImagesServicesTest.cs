@@ -64,7 +64,7 @@ namespace Millon.Inmobiliaria.Test
 
         [Test]
         [Author("Yeiner Merino")]
-        public void GetBy_Owner_OK()
+        public void GetBy_ProperyImage_OK()
         {
             // Arrange
             var service = this.CreateService();
@@ -92,6 +92,57 @@ namespace Millon.Inmobiliaria.Test
 
             // Assert
             Assert.AreEqual(DbPropertyImageValid.IdPropertyImage, result.Data.IdPropertyImage);
+            this.mockRepository.VerifyAll();
+        }
+
+        [Test]
+        [Author("Yeiner Merino")]
+        public async Task Add_PropertyImage_OK()
+        {
+
+            // Arrange
+            var service = this.CreateService();
+            var FileMock = new Mock<IFormFile>();
+            // Arrange
+
+            var Content = "q1w2ert56tregfidvmiunv9fviufd";
+            var FileName = "Owner.jpg";
+            var ms = new MemoryStream();
+            var writer = new StreamWriter(ms);
+            writer.Write(Content);
+            writer.Flush();
+            ms.Position = 0;
+            FileMock.Setup(_ => _.OpenReadStream()).Returns(ms);
+            FileMock.Setup(_ => _.FileName).Returns(FileName);
+            FileMock.Setup(_ => _.Length).Returns(ms.Length);
+            var file = FileMock.Object;
+
+            var dbPropertyImage =
+                 new PropertyImageRequest()
+                 {
+                     File = file,
+                     IdProperty = 4
+                 };
+
+            var dbmockOwnerProperty =
+                new Property()
+                {
+                    IdOwner = 4,
+                    Address = "Calle 14 via al mar",
+                    Name = "New Miami",
+                    CodeInternal = "123-44",
+                    IdProperty = 1,
+                    Price =1200000,
+                    Year = 2020
+                };
+
+            this.mockOwnerProperty.Setup(s => s.GetById(4)).Returns(dbmockOwnerProperty);
+
+            this.mockPropertyImageRepos.Setup(s => s.AddAsync(It.IsAny<PropertyImage>())).ReturnsAsync(1);
+
+            var AddOwner = await service.AddPropertyImageAsync(dbPropertyImage);
+
+            Assert.AreEqual(true, AddOwner.IsSuccess);
             this.mockRepository.VerifyAll();
         }
 

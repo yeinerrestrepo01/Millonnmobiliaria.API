@@ -104,7 +104,7 @@ namespace Millon.Inmobiliaria.Test
             var FileMock = new Mock<IFormFile>();
             // Arrange
 
-            var Content = "Hello World from a Fake File";
+            var Content = "q1w2ert56tregfidvmiunv9fviufd";
             var FileName = "Owner.jpg";
             var ms = new MemoryStream();
             var writer = new StreamWriter(ms);
