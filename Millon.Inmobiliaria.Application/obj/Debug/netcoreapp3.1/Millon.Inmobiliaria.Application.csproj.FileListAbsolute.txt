@@ -14,4 +14,3 @@ C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\bin\Debug\net
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Common.pdb
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Domain.pdb
 C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\bin\Debug\netcoreapp3.1\Millon.Inmobiliaria.Infrastructure.pdb
-C:\Proyectos\Millonnmobiliaria.API\Millon.Inmobiliaria.Application\obj\Debug\netcoreapp3.1\Millon.Inmobiliaria.Application.csproj.CopyComplete

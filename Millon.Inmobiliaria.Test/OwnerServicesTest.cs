@@ -69,7 +69,7 @@ namespace Millon.Inmobiliaria.Test
             var dbOwner =
                  new Owner()
                  {
-                     IdOwner = 2,
+                     IdOwner = 4,
                      Address = "Calle 14 via al mar",
                      Name = "Jose Luis",
                      Birthday = DateTime.Now.AddYears(-30)
@@ -80,7 +80,7 @@ namespace Millon.Inmobiliaria.Test
             var dbOwnerValid =
                  new Owner()
                  {
-                     IdOwner = 2,
+                     IdOwner = 4,
                      Address = "Calle 14 via al mar",
                      Name = "Jose Luis",
                      Birthday = DateTime.Now.AddYears(-30)
